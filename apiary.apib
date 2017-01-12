@@ -10,7 +10,7 @@ This is the online API reference for the FirstNet State Portal (SPP) Web Service
 
 ### Get Access Token [POST]
 
-This endpoint should be used to authenticate the user and authorize access to REST resources based on roles & permissions defined within Drupal. In this request, you will perform a "User Credentials" grant type as indicated by passing the parameter, "grant_type=password" in the POST data. On success, it will return a JSON OAuth 2.0 access token response. The access token response data should be stored securely from the client application using best-practices for your particular front-end application framework.
+Get an access token by supplying valid Drupal credentials, i.e. username and password. Authenticated users will have authorized access to REST resources based on roles & permissions defined within Drupal. In this request, you will perform a "User Credentials" grant type as indicated by passing the parameter, "grant_type=password" in the POST data. On success, it will return a JSON OAuth 2.0 access token response. The access token response data should be stored securely from the client application using best-practices for your particular front-end application framework.
 
 + Request 200 (application/x-www-form-urlencoded)
    
