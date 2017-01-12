@@ -1,0 +1,37 @@
+FORMAT: 1A
+HOST: https://sgsfirstnetd8rd29qzkrui.devcloud.acquia-sites.com/
+
+# FirstNet SPP Drupal
+
+This is the online API reference for the FirstNet State Portal (SPP) Web Services. These web services are powered by a Drupal 8 instance.
+
+## OAuth 2.0 User Authentication [/oauth2/token]
+
+
+### Get Access Token [POST]
+
+This endpoint should be used to authenticate the user and authorize access to REST resources based on roles & permissions defined within Drupal. In this request, you will perform a "User Credentials" grant type as indicated by passing the parameter, "grant_type=password" in the POST data. On success, it will return a JSON OAuth 2.0 access token response. The access token response data should be stored securely from the client application using best-practices for your particular front-end application framework.
+
++ Request 200 (application/x-www-form-urlencoded)
+   
++ Attributes
+    + grant_type
+         + `password` (string, required) - Type of grant
+         + `refresh_token` (string, required) - Refresh token
+    + `client_id`: `firstnet_spp_web` (string, required) - Client identifier
+    + username: jnguyen2 (string, required) - Drupal Username
+    + password: password (string, required) - Drupal Password
+    + `refresh_token`: d51416246e8601548374963b5d449cffcfd84468 (string, required) - The refresh token
+
+ 
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "access_token": "1be29a550612163a85231fa04e53ed89876c1540",
+              "expires_in": 3600,
+              "token_type": "Bearer",
+              "scope": "default",
+              "refresh_token": "aeb264cc389d13d645c22c5ca71d1655554c5c69"
+            }
